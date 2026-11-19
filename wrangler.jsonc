@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Tên Worker: PHẢI trùng đúng tên Worker bạn tạo trên Cloudflare (Workers & Pages).
+  "name": "gentravel",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/server.js",
+  "observability": { "enabled": true },
+  "vars": {
+    // Máy chủ Base44 mà Worker gọi tới (giữ mặc định trừ khi Base44 báo khác).
+    "BASE44_SERVER_URL": "https://base44.app"
+  }
+  // Bí mật KHÔNG ghi ở đây. Đặt bằng lệnh:  npx wrangler secret put GATEWAY_SECRET
+  // App ID Base44 điền trong app.config.json.
+}
